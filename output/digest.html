@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trending News Digest — March 23, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #17120d;
+      --paper:   #f4efe6;
+      --surface: #ede7db;
+      --rule:    #c5b49a;
+      --accent:  #8c1c1c;
+      --muted:   #6b5d4e;
+      --light:   #a89880;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    /* ── masthead ── */
+    header {
+      padding: 2.4rem 4rem 1.6rem;
+      border-bottom: 3px double var(--rule);
+      display: flex;
+      align-items: baseline;
+      gap: 2.4rem;
+      flex-wrap: wrap;
+    }
+
+    .masthead {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .masthead span {
+      color: var(--accent);
+    }
+
+    .dateline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding-left: 1.4rem;
+      border-left: 1px solid var(--rule);
+    }
+
+    /* ── topic nav ── */
+    .topic-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.6rem 4rem;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .topic-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8rem;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .topic-pill:hover {
+      background: var(--accent);
+      color: var(--paper);
+      border-color: var(--accent);
+    }
+
+    /* ── digest grid ── */
+    .digest {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 3rem 3rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    /* ── individual card ── */
+    .news-card {
+      display: grid;
+      grid-template-columns: minmax(260px, 2fr) 3fr;
+      gap: 2.4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .news-card:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .card-media {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      display: block;
+    }
+
+    .thumbs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .thumb-img {
+      flex: 1;
+      height: 72px;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      opacity: 0.82;
+      display: block;
+    }
+
+    .thumb-img:hover {
+      opacity: 1;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .topic-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--ink);
+      padding-left: 1rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-text {
+      font-size: 0.96rem;
+      line-height: 1.82;
+      color: var(--ink);
+      font-weight: 300;
+      white-space: pre-wrap;
+    }
+
+    .article-text::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 0.1em;
+      color: var(--accent);
+    }
+
+    /* ── footer ── */
+    footer {
+      text-align: center;
+      padding: 1.6rem;
+      font-size: 0.72rem;
+      color: var(--light);
+      border-top: 1px solid var(--rule);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 720px) {
+      header, .topic-nav, .digest { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .news-card { grid-template-columns: 1fr; gap: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">Trending <span>Today</span></div>
+  <div class="dateline">AI-curated digest &nbsp;&middot;&nbsp; March 23, 2026</div>
+</header>
+
+<nav class="topic-nav">
+  <a class="topic-pill" href="#topic-0">Ukraine war updates</a><a class="topic-pill" href="#topic-1">Israel-Hamas ceasefire negotiations</a><a class="topic-pill" href="#topic-2">China's economic slowdown</a><a class="topic-pill" href="#topic-3">Amazon deforestation surge</a><a class="topic-pill" href="#topic-4">Global AI regulation debates</a>
+</nav>
+
+<div class="digest">
+  <span id="topic-0"></span>
+    <article class="news-card">
+      <div class="card-media">
+        <img src="https://www.aljazeera.com/wp-content/uploads/2023/06/2023-06-14T141145Z_1568464362_RC20J1AL50I3_RTRMADP_3_UKRAINE-CRISIS-OFFENSIVE-STOROZHEVE-1686762288.jpg?resize=1920%2C1440" alt="Image for Ukraine war updates" class="hero-img" onerror="this.style.display='none'" />
+        <div class="thumbs"><img src="https://i.guim.co.uk/img/media/f4075c1426f9be927d5b0cc66726008795531a2e/0_310_4201_2522/master/4201.jpg?width=1200&quality=85&auto=format&fit=max&s=e557c7266b20ddb6939f6eacb4ef1061" alt="Ukraine war updates" class="thumb-img" onerror="this.style.display='none'" /><img src="https://www.aljazeera.com/wp-content/uploads/2022/03/AP22070609336904.jpg?resize=770%2C513&quality=80" alt="Ukraine war updates" class="thumb-img" onerror="this.style.display='none'" /></div>
+      </div>
+      <div class="card-body">
+        <h2 class="topic-title">Ukraine war updates</h2>
+        <div class="article-text">Russian attacks killed six people in Ukraine over the past 24 hours, officials reported in four southeastern regions. Ukrainian forces destroyed Russian Buk air defense systems, including a Buk-M3 surface-to-air missile system and a transporter-loader, according to military footage. Meanwhile, Ukraine said talks to resolve the war would continue in the U.S. on Sunday.
+
+In a separate incident, Ukrainian shelling killed four people in Russia’s Belgorod border region. The European Union extended sanctions against Russians while maintaining pressure on the U.S. for lifting sanctions on Russian oil exports. The EU criticized Washington’s decision, emphasizing continued efforts to isolate Moscow over its invasion.
+
+Fighting persists as both sides report casualties and infrastructure damage, with no immediate signs of a breakthrough in negotiations.</div>
+      </div>
+    </article><span id="topic-1"></span>
+    <article class="news-card">
+      <div class="card-media">
+        <img src="https://i.guim.co.uk/img/media/fa70f1abd1127f1a3efde25dfbd9621259566c76/0_18_2084_1250/master/2084.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=86108f7ff46ee1915d2f2b6a3a867aad" alt="Image for Israel-Hamas ceasefire negotiations" class="hero-img" onerror="this.style.display='none'" />
+        <div class="thumbs"><img src="https://www.osvnews.com/wp-content/uploads/2025/01/20250115T1621-ISRAEL-HAMAS-CEASEFIRE-1788356-scaled.jpg" alt="Israel-Hamas ceasefire negotiations" class="thumb-img" onerror="this.style.display='none'" /><img src="https://i.ytimg.com/vi/AZafhNRBzHo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCCyzg4rYx7RcY8xGYCHfL22KnmaA" alt="Israel-Hamas ceasefire negotiations" class="thumb-img" onerror="this.style.display='none'" /></div>
+      </div>
+      <div class="card-body">
+        <h2 class="topic-title">Israel-Hamas ceasefire negotiations</h2>
+        <div class="article-text">Israel’s Cabinet has approved a deal for a six-week ceasefire in Gaza and the release of dozens of hostages, pausing the 15-month war with Hamas. The agreement, announced by AP News, marks the first phase of a broader negotiation aimed at halting hostilities between the two sides.
+
+Hamas’s chief negotiator said the group had received guarantees from the United States regarding the terms, according to Al Jazeera’s live updates. Meanwhile, Donald Trump’s Board of Peace presented Hamas with a written proposal on laying down weapons, two sources told Reuters. The developments follow months of stalled talks and renewed pressure to secure a lasting truce.
+
+The ceasefire would pause fighting for six weeks, providing a temporary reprieve after prolonged conflict. Further details on implementation and the hostage release schedule remain undisclosed. Negotiations are expected to continue as both sides assess the initial terms.</div>
+      </div>
+    </article><span id="topic-2"></span>
+    <article class="news-card">
+      <div class="card-media">
+        <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/8A58/production/_108961453_chinaindustrialoutput-nc.png.webp" alt="Image for China's economic slowdown" class="hero-img" onerror="this.style.display='none'" />
+        <div class="thumbs"><img src="https://econofact.org/wp-content/uploads/2023/11/Hanming-Graph-4-Web.png" alt="China's economic slowdown" class="thumb-img" onerror="this.style.display='none'" /><img src="https://graphics.reuters.com/CHINA-ECONOMY/klpyzedrqvg/debt-gdp-new.jpg" alt="China's economic slowdown" class="thumb-img" onerror="this.style.display='none'" /></div>
+      </div>
+      <div class="card-body">
+        <h2 class="topic-title">China's economic slowdown</h2>
+        <div class="article-text">China’s economic slowdown deepened in early 2026 as official data showed industrial profits plummeting amid weak domestic demand and persistent deflationary pressures. Analysts questioned the reliability of recent growth figures, noting that despite a reported GDP target of 4.5% to 5% for 2026, underlying indicators such as export performance and investment activity remained sluggish. The government’s latest economic updates have drawn skepticism from international observers, who highlight discrepancies between official targets and real-time economic signals.
+
+The slowdown has fueled public discontent, particularly during the annual “Two Sessions” meetings, where policymakers face scrutiny over structural challenges including youth unemployment and a struggling property sector. While some officials touted resilience in export figures as a sign of recovery, critics argue that short-term trade gains mask deeper vulnerabilities. The financial press has repeatedly flagged declining investment and corporate earnings as red flags for broader economic stability.
+
+With global investors closely watching, China’s ability to sustain growth hinges on effective policy responses to deflation and weak consumer confidence. The coming months will test whether recent measures can reverse the trend or if further slowdown lies ahead.</div>
+      </div>
+    </article><span id="topic-3"></span>
+    <article class="news-card">
+      <div class="card-media">
+        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/6AE4/production/_115746372_gettyimages-1164561722-1.jpg" alt="Image for Amazon deforestation surge" class="hero-img" onerror="this.style.display='none'" />
+        <div class="thumbs"><img src="https://www.aljazeera.com/wp-content/uploads/2021/11/2021-11-17T164932Z_1923985029_RC2GWQ9FCJAI_RTRMADP_3_BRAZIL-INDIGENOUS-VIOLENCE.jpg?resize=770%2C513&quality=80" alt="Amazon deforestation surge" class="thumb-img" onerror="this.style.display='none'" /><img src="https://i.guim.co.uk/img/media/e0d851825d12a5ac3a3ac3bef0351507bf5c68b5/0_344_5180_3108/master/5180.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=33b3e9ccc33b95867e8a53d94fad393c" alt="Amazon deforestation surge" class="thumb-img" onerror="this.style.display='none'" /></div>
+      </div>
+      <div class="card-body">
+        <h2 class="topic-title">Amazon deforestation surge</h2>
+        <div class="article-text">Amazon deforestation in Brazil’s Amazon rainforest surged to a record high in 2025, according to recent data, reversing a previous decline and raising concerns about irreversible ecological damage. Preliminary figures indicate that over 5,000 square kilometers were cleared, an area more than six times the size of New York City. Scientists warn the forest is approaching a critical tipping point where degradation could become permanent, threatening global biodiversity and climate stability.
+
+The surge follows a 50% drop in deforestation in 2023, which had raised hopes for conservation progress. However, experts say the latest increase reflects weakened enforcement and rising illegal logging activities. Indigenous groups and environmental organizations have intensified protests, including blockades at major climate summits, to demand stronger protections for the Amazon.
+
+Authorities have not yet released official 2025 totals, but early satellite data and independent analyses confirm the sharp rise in forest loss. Conservationists urge immediate action to prevent further damage to one of the world’s most vital ecosystems.</div>
+      </div>
+    </article><span id="topic-4"></span>
+    <article class="news-card">
+      <div class="card-media">
+        <img src="https://i.ytimg.com/vi/3TXEX8vaH60/maxresdefault.jpg" alt="Image for Global AI regulation debates" class="hero-img" onerror="this.style.display='none'" />
+        <div class="thumbs"><img src="https://www.shutterstock.com/shutterstock/videos/3820090657/thumb/1.jpg?ip=x480" alt="Global AI regulation debates" class="thumb-img" onerror="this.style.display='none'" /><img src="https://healthpolicy-watch.news/wp-content/uploads/2026/02/kluge.jpg" alt="Global AI regulation debates" class="thumb-img" onerror="this.style.display='none'" /></div>
+      </div>
+      <div class="card-body">
+        <h2 class="topic-title">Global AI regulation debates</h2>
+        <div class="article-text">Global debates over artificial intelligence regulation are intensifying as governments and policymakers seek to balance innovation with safety. The White House has announced plans to introduce new rules governing AI development, reflecting growing concerns about its societal impact. Meanwhile, lawmakers in multiple countries are debating whether stricter oversight is necessary to address issues such as misinformation, online safety and potential misuse of the technology.
+
+In Europe, the European Union has been a frontrunner in AI regulation, with its proposed Artificial Intelligence Act aiming to set global standards for ethical AI use. The legislation would classify AI systems by risk level and impose strict requirements on high-risk applications. In the United States, discussions have centered on federal oversight, with proposals for expanded regulation to safeguard against harms while maintaining technological competitiveness.
+
+The push for global AI regulation reflects a broader recognition that without coordinated policies, disparities in oversight could create uneven playing fields for businesses and leave gaps in public protection. As discussions continue, the challenge remains finding a balance that fosters innovation while addressing ethical and security concerns.</div>
+      </div>
+    </article>
+</div>
+
+<footer>Generated by NewsFlow &mdash; CrewAI Agentic Pipeline &nbsp;&middot;&nbsp; March 23, 2026</footer>
+
+</body>
+</html>
